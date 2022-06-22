@@ -26,19 +26,19 @@ public class Main {
         String choice;
         do {
             System.out.println("What would you like to do: ");
-            System.out.println("1. Print all products: ");
-            System.out.println("2. Add product");
-            System.out.println("3. Create and print a XML file");
-            System.out.println("4. Remove product");
-            System.out.println("5. Quit");
+            System.out.println("Print all products: ");
+            System.out.println("Add product");
+            System.out.println("Create and print a XML file");
+            System.out.println("Remove product");
+            System.out.println("Quit");
             choice = scan.nextLine();
             switch (choice) {
-                case "1":
+                case "Print":
                     System.out.println("Printing all products!");
                     System.out.println(productsArrayList);
                     System.out.println("You chose:" + choice);
                     break;
-                case "2":
+                case "Add":
                     System.out.println("You started adding an item." + "\n");
                     System.out.println("Enter product name:");
                     String name = scan.nextLine();
@@ -58,7 +58,7 @@ public class Main {
                     productsArrayList.add((new Products(name,expire,date,manufactoreName,weightOfProduct,quantityOfProduct,locationOfProduct)));
                     System.out.println("You chose:" + choice);
                     break;
-                case "3":
+                case "XML":
                     try {
 
                         DocumentBuilderFactory dFact = DocumentBuilderFactory.newInstance();
@@ -153,7 +153,7 @@ public class Main {
                     }
                     System.out.println("You chose:" + choice);
                     break;
-                case "4":
+                case "Remove":
                     System.out.println("Please input the name of the product you`d like to remove:");
                     String ch = scan.nextLine();
                     for (int i = 0; i < productsArrayList.size(); i++) {
@@ -169,11 +169,11 @@ public class Main {
                     }
                     System.out.println("You choce:" + choice);
                     break;
-                case "5":
+                case "Quit":
                     System.out.println("Exiting the program.");
                     System.out.println("You choce:" + choice);
                     break;
             }
-        } while (!choice.equals("5"));
+        } while (!choice.equals("Quit"));
     }
 }
